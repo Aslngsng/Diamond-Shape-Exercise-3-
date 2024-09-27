@@ -1,0 +1,31 @@
+#Write a Python function named print_diamond that takes an odd integer n as an argument and prints a diamond shape with a width of n using the * character.
+#For n = 5, the output should be:
+#    *     4   1
+#   ***    3   3
+#  *****   2   5  
+#   ***    3   3
+#    *     4   1
+#Note: If an even number is passed, the function should return "Please provide an odd integer."
+
+
+try: 
+    n = int(input("enter an odd number: "))
+
+    if n % 2 == 0:
+        raise ValueError ("Invalid. Please enter an odd number.")
+    else: 
+        for i in range(0, n // 2 + 1):
+            for j in range(0, n // 2 - i):
+                print(" ", end="")
+            for j in range(0, 2 * i + 1):
+                print("*", end="")
+            print()
+        for i in range(n // 2 - 1, -1, -1):
+            for j in range(0, n // 2 - i):
+                print(" ", end="")
+            for j in range(0, 2 * i + 1):
+                print("*", end="")
+            print()
+
+except ValueError as a:
+    print (a)
